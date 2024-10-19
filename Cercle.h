@@ -10,7 +10,7 @@ private:
 	Point* center;
 
 public:
-	Cercle(double,Point);
+	Cercle(double,Point*);
 	void affichage() const;
 	void ModifierRayon(const double&);
 	void TranslaterCenter(const double&, const double&);
@@ -19,6 +19,5 @@ public:
 	bool equality(const Cercle&)const;
 	bool operator==(const Cercle&)const;
 	bool appartenir(const Point&) const;
-	~Cercle();
 };
 

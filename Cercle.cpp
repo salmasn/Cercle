@@ -2,14 +2,15 @@
 
 const double Cercle::PI = 3.14;
 
-Cercle::Cercle(double r, Point p) :rayon(r),center(new Point(p))
+Cercle::Cercle(double r, Point* p) :rayon(r),center(p)
 {
 	cout << "Constructeur cercle " << endl;
+	cout << "L'adress du point passe en parametre est : " << p << endl;
 }
 
 void Cercle::affichage() const
 {
-	
+	cout << "L'adress de center est : " << this->center << endl;
 	cout << "Le rayon: " << this->rayon << endl;
 	cout << "Le centre: " << endl;
 	this->center->affichage();
@@ -48,9 +49,4 @@ bool Cercle::operator==(const Cercle& c) const
 bool Cercle::appartenir(const Point& p) const
 {
 	return(this->center->distance(p) <= this->rayon);
-}
-
-Cercle::~Cercle()
-{
-	cout << "destructeur cercle " << endl;
 }
